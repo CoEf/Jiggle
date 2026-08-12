@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dqneepgaskmli"]
+
+[ext_resource type="PackedScene" uid="uid://gf46a0big86l" path="res://assets/adachi_rigged4/adachi_rigged4_jiggle.tscn" id="1_jiggle"]
+[ext_resource type="PackedScene" uid="uid://ugxpk6itilfy" path="res://assets/adachi_rigged4/adachi_rigged4_springbone.tscn" id="2_spring"]
+[ext_resource type="Script" uid="uid://bvowlbepk2ld8" path="res://demos/09_real_character/rig4_compare.gd" id="3_compare"]
+
+[node name="Rig4Compare" type="Node3D" unique_id=607800021]
+script = ExtResource("3_compare")
+
+[node name="Jiggle" parent="." unique_id=265193025 instance=ExtResource("1_jiggle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
+external_drive = true
+
+[node name="SpringBone" parent="." unique_id=1515810528 instance=ExtResource("2_spring")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+external_drive = true

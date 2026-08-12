@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="JiggleChainSettings" format=3 uid="uid://dwg1wlcnrgoy5"]
+
+[ext_resource type="Script" uid="uid://d0dgmy45kgh2f" path="res://jiggle/chain_settings.gd" id="1_pqmyw"]
+
+[resource]
+script = ExtResource("1_pqmyw")
+shape_stiffness = 0.25
+shape_elasticity = 0.05
+gravity = Vector3(0, -4, 0)
+metadata/_custom_type_script = "uid://d0dgmy45kgh2f"

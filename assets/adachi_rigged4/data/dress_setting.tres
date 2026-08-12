@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="JiggleChainSettings" format=3 uid="uid://bjgtnp0si1fmh"]
+
+[ext_resource type="Script" uid="uid://d0dgmy45kgh2f" path="res://jiggle/chain_settings.gd" id="1_ylkre"]
+
+[resource]
+script = ExtResource("1_ylkre")
+iterations = 8
+shape_stiffness = 0.5
+drag = 0.3
+restore_frequency = 0.7
+angle_limit_degrees = 30.0
+particle_radius = 0.02
+metadata/_custom_type_script = "uid://d0dgmy45kgh2f"
