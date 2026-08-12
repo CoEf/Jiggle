@@ -1,13 +1,24 @@
 # Jiggle — Godot 4.7 흔들림 물리 학습 프로젝트
 
 3D에서 **Cloth · Hair · 가슴/엉덩이 흔들림**이 어떻게 만들어지는지 배우기 위한
-인터랙티브 교보재. 외부 3D 에셋을 하나도 쓰지 않고 전부 코드로 만든다.
+인터랙티브 교보재. 데모 01~08은 외부 에셋 없이 형상까지 전부 코드로 만들고,
+데모 09만 실제 캐릭터가 필요해서 직접 만든 Rigify 리그
+([`assets/adachi_rigged4/`](assets/adachi_rigged4/))를 쓴다.
 
 ## 실행
 
+Godot 4.7 이상이 필요하다.
+
 ```bash
-"C:\Godot\Godot_v4.7-stable_win64.exe" --path "C:\Users\Public\Code\_Collection\Jiggle"
+git clone https://github.com/CoEf/Jiggle.git
 ```
+
+```bash
+godot --path Jiggle
+```
+
+`godot` 이 PATH에 없다면 실행 파일 경로를 그대로 쓰면 된다
+(Windows 예: `Godot_v4.7-stable_win64.exe --path Jiggle`).
 
 ## 흔들림 코드
 
@@ -26,14 +37,16 @@
 모든 데모를 프리셋 × 자극 조합으로 돌려 보고 발산·NaN이 없는지 확인한다.
 
 ```bash
-"C:\Godot\Godot_v4.7-stable_win64_console.exe" --headless --path "C:\Users\Public\Code\_Collection\Jiggle" --script tools/smoke_test.gd
+godot --headless --path . --script tools/smoke_test.gd
 ```
 
 이건 "안 터졌는가"만 본다. 실제 캐릭터에서 **흔들림이 정말 나오는지**는 따로 잰다.
 
 ```bash
-"C:\Godot\Godot_v4.7-stable_win64_console.exe" --headless --path "C:\Users\Public\Code\_Collection\Jiggle" --script tools/character_test.gd
+godot --headless --path . --script tools/character_test.gd
 ```
+
+Windows에서는 출력을 보려면 콘솔 빌드(`..._console.exe`)로 실행해야 한다.
 
 ## 문서
 
@@ -77,3 +90,16 @@
 - [`jiggle/jiggle_spring.gd`](jiggle/jiggle_spring.gd) — 스프링-댐퍼 적분기 (가슴·엉덩이)
 - [`jiggle/verlet_body.gd`](jiggle/verlet_body.gd) — Verlet 솔버 (사슬·천 공용)
 - [`jiggle/jiggle_bone_modifier.gd`](jiggle/jiggle_bone_modifier.gd) — 커스텀 `SkeletonModifier3D`
+
+## 글
+
+이 프로젝트를 소재로 쓴 글은 [devlog](https://coef.github.io/blog/character/jiggle-tour-1-spring-damper/)에 있다.
+데모를 화면 그대로 따라가는 투어 시리즈와, 수식을 유도하는 이론 시리즈,
+구현하며 겪은 함정을 정리한 실전 시리즈로 나뉜다.
+
+## 라이선스
+
+[MIT](LICENSE).
+
+`assets/adachi_rigged4/` 의 모델·텍스처도 직접 만든 것이라 같은 조건으로 쓸 수 있다.
+
